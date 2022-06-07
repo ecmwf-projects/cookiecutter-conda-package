@@ -6,15 +6,15 @@ requires = [
     "setuptools_scm_git_archive",
 ]
 
+[tool.coverage.run]
+branch = true
+
+[tool.isort]
+profile = "black"
+
 [tool.setuptools_scm]
 write_to = "sarsen/version.py"
 write_to_template = '''
 # don't change, don't track in version control
 __version__ = "{version}"
 '''
-
-[tool.coverage.run]
-branch = true
-
-[tool.isort]
-profile = "black"
