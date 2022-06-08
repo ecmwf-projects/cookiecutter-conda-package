@@ -26,6 +26,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Cache conda
+      uses: actions/cache@v3
+      with:
+        path: ~/conda_pkgs_dir
+        key: ubuntu-latest-3.10
     - uses: conda-incubator/setup-miniconda@v2
       with:
         channels: conda-forge
@@ -48,6 +53,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Cache conda
+      uses: actions/cache@v3
+      with:
+        path: ~/conda_pkgs_dir
+        key: ubuntu-latest-3.10
     - uses: conda-incubator/setup-miniconda@v2
       with:
         channels: conda-forge
@@ -74,6 +84,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Cache conda
+      uses: actions/cache@v3
+      with:
+        path: ~/conda_pkgs_dir
+        key: ubuntu-latest-${{ '{{' }} matrix.python-version {{ '}}' }}
     - uses: conda-incubator/setup-miniconda@v2
       with:
         channels: conda-forge
