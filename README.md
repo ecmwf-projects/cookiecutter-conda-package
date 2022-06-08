@@ -16,6 +16,9 @@ Alpha stage:
 - copyright + Apache v2.0 license
 - GitHub Actions
   - unit-tests
+  - pre-commit
+  - integration-tests
+  - build package & publish on PyPI
 - Makefile
 - gitignore
 
@@ -25,7 +28,6 @@ Planned:
 - auto template update via cruft
 - keep environment files up-to-date
 - add documentation skeleton (with sphinx / myst?)
-- publish on PyPI on release
 - add testing `main` on selected dependencies
 
 ## Usage
