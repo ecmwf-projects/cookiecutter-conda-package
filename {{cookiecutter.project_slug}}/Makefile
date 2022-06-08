@@ -22,4 +22,4 @@ image:
 	docker build -t $(PROJECT) .
 
 start:
-	docker run --rm -ti $(PROJECT)
+	docker run --rm -ti -v $(PWD):/srv $(PROJECT)
