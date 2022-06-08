@@ -16,3 +16,10 @@ type-check:
 
 conda-env-update:
 	$(CONDA) env update $(CONDAFLAGS) -f environment.yml
+
+
+image:
+	docker build -t $(PROJECT) .
+
+start:
+	docker run --rm -ti $(PROJECT)
