@@ -1,0 +1,20 @@
+name: Pre-commit auto-update
+on:
+  schedule:
+  - cron: 0 0 1 * *
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - name: Install pre-commit
+      shell: bash -l {0}
+      run: pip install pre-commit
+    - name: Run pre-commit autoupdate
+      shell: bash -l {0}
+      run: |
+        pre-commit autoupdate -c .pre-commit-config.yaml
+        pre-commit autoupdate -c "{{cookiecutter.project_slug}}/.pre-commit-config.yaml"
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
