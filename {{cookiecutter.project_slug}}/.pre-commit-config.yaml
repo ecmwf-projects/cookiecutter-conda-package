@@ -39,7 +39,3 @@ repos:
     args: [--autofix]
   - id: pretty-format-toml
     args: [--autofix]
-- repo: https://github.com/cruft/cruft
-  rev: 2.10.2
-  hooks:
-  - id: cruft
