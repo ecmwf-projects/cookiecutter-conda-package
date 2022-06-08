@@ -21,10 +21,10 @@ Alpha stage:
   - build package & publish on PyPI
 - Makefile
 - gitignore
+- make Docker image
 
 Planned:
 
-- make Docker image
 - auto template update via cruft
 - keep environment files up-to-date
 - add documentation skeleton (with sphinx / myst?)
