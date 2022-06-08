@@ -1,7 +1,11 @@
 name: Pre-commit auto-update
+
 on:
-  schedule:
-  - cron: 0 0 1 * *
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
 jobs:
   auto-update:
     runs-on: ubuntu-latest
