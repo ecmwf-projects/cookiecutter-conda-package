@@ -19,6 +19,7 @@ jobs:
     - uses: pre-commit/action@v3.0.0
 
   unit-tests:
+    name: unit-tests (3.10)
     runs-on: ubuntu-latest
     defaults:
       run:
