@@ -37,7 +37,7 @@ conda install -c conda-forge cruft
 cruft create https://github.com/bopen/cookiecutter-conda-package
 ```
 
-then answer the configuration questions of accept the defaults.
+then answer the configuration questions or accept the defaults when in doubt.
 
 Setup the environment and git pre-commit hooks:
 
