@@ -1,6 +1,32 @@
 # cookiecutter-conda-pypackage
 
-Template for Python package based on Conda
+Template for Python package based on Conda.
+
+This package is developed to ease development of ECMWF packages, but it is intended to
+be more generic.
+
+## Features
+
+Alpha stage:
+
+- pre-commit hooks
+  - various linters
+  - black + isort
+- version with setuptools-scm-git
+- copyright + Apache v2.0 license
+- GitHub Actions
+  - unit-tests
+- Makefile
+- gitignore
+
+Planned:
+
+- make Docker image
+- auto template update via cruft
+- keep environment files up-to-date
+- add documentation skeleton (with sphinx / myst?)
+- publish on PyPI on release
+- add testing `main` on selected dependencies
 
 ## License
 

@@ -34,7 +34,7 @@ jobs:
         use-only-tar-bz2: true
     - name: Install dependencies
       run: |
-        mamba create -f tests/ubuntu-latest-${{ '{{' }} matrix.python-version {{ '}}' }}
+        mamba create -f environment.yml
     - name: Install package
       run: |
         python -m pip install --no-deps -e .
