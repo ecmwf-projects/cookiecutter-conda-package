@@ -11,7 +11,7 @@ on:
     - main
 
 concurrency:
-  group: ${{ '{{' }} github.workflow {{ '}}' }}-${{ '{{' }} github.ref {{ '}}' }}
+  group: ${{ '{{ github.workflow }}' }}-${{ '{{ github.ref }}' }}
   cancel-in-progress: true
 
 jobs:
@@ -95,13 +95,13 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/conda_pkgs_dir
-        key: ubuntu-latest-${{ '{{' }} matrix.python-version {{ '}}' }}${{ '{{' }} matrix.extra {{ '}}' }}
+        key: ubuntu-latest-${{ '{{ matrix.python-version }}' }}${{ '{{ matrix.extra }}' }}
     - uses: conda-incubator/setup-miniconda@v2
       with:
         channels: conda-forge
         mamba-version: '*'
-        python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
-        environment-file: environment${{ '{{' }} matrix.extra {{ '}}' }}.yml
+        python-version: ${{ '{{ matrix.python-version }}' }}
+        environment-file: environment${{ '{{ matrix.extra }}' }}.yml
     - name: Install package
       run: |
         python -m pip install --no-deps -e .
@@ -124,4 +124,4 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
-        password: ${{ '{{' }} secrets.PYPI_API_TOKEN {{ '}}' }}
+        password: ${{ '{{ secrets.PYPI_API_TOKEN }}' }}
