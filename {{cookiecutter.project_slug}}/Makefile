@@ -1,4 +1,6 @@
-PROJECT = {{ cookiecutter.project_slug }}
+PROJECT := {{ cookiecutter.project_slug }}
+CONDA := conda
+CONDAFLAGS :=
 
 default: qa test
 
@@ -9,4 +11,4 @@ test:
 	python -m pytest -vv
 
 conda-env-update:
-	conda env update -f environment.yml
+	$(CONDA) env update $(CONDAFLAGS) -f environment.yml
