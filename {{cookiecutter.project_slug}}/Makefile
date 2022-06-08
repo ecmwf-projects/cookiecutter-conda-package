@@ -6,4 +6,4 @@ qa:
 	pre-commit run --all-files
 
 test:
-	pytest -vv
+	python -m pytest -vv
