@@ -13,8 +13,8 @@ branch = true
 profile = "black"
 
 [tool.setuptools_scm]
-write_to = "sarsen/version.py"
+write_to = "{{ cookiecutter.project_slug }}/version.py"
 write_to_template = '''
-# don't change, don't track in version control
+# Do not change! Do not track in version control!
 __version__ = "{version}"
 '''
