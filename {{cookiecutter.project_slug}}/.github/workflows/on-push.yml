@@ -11,15 +11,18 @@ on:
     - main
 
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - uses: pre-commit/action@v3.0.0
+
   unit-tests:
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
-
-    strategy:
-      matrix:
-        python-version: ['3.10']
 
     steps:
     - uses: actions/checkout@v3
@@ -27,7 +30,7 @@ jobs:
       with:
         channels: conda-forge
         mamba-version: '*'
-        python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
+        python-version: '3.10'
         environment-file: environment.yml
     - name: Install package
       run: |
@@ -37,6 +40,7 @@ jobs:
         make test
 
   type-check:
+    needs: [unit-tests]
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -56,3 +60,29 @@ jobs:
     - name: Run code quality checks
       run: |
         make type-check
+
+  integration-tests:
+    needs: [unit-tests]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9']
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        channels: conda-forge
+        mamba-version: '*'
+        python-version: ${{ '{{' }} matrix.python-version {{ '}}' }}
+        environment-file: environment.yml
+    - name: Install package
+      run: |
+        python -m pip install --no-deps -e .
+    - name: Run tests
+      run: |
+        make test
