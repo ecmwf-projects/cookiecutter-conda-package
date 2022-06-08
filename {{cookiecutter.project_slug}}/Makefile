@@ -10,5 +10,8 @@ qa:
 test:
 	python -m pytest -vv
 
+type-check:
+	python -m mypy --strict .
+
 conda-env-update:
 	$(CONDA) env update $(CONDAFLAGS) -f environment.yml
