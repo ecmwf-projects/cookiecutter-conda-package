@@ -1,6 +1,6 @@
-# cookiecutter-conda-pypackage
+# cookiecutter-conda-package
 
-Template for Python package based on Conda.
+Template for Python packages based on Conda.
 
 This package is developed to ease development of ECMWF packages, but it is intended to
 be more generic.
