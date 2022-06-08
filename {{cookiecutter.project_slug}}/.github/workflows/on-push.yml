@@ -19,7 +19,6 @@ jobs:
     - uses: pre-commit/action@v3.0.0
 
   unit-tests:
-    needs: [pre-commit]
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,7 +40,7 @@ jobs:
         make test
 
   type-check:
-    needs: [pre-commit]
+    needs: [unit-tests]
     runs-on: ubuntu-latest
     defaults:
       run:
