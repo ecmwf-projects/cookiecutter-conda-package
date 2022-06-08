@@ -7,3 +7,6 @@ qa:
 
 test:
 	python -m pytest -vv
+
+conda-env-update:
+	conda env update -f environment.yml

@@ -28,10 +28,39 @@ Planned:
 - publish on PyPI on release
 - add testing `main` on selected dependencies
 
+## Usage
+
+For best experience create and keep the project up-to-date with cruft:
+
+```
+conda install -c conda-forge cruft
+cruft create https://github.com/bopen/cookiecutter-conda-package
+```
+
+then answer the configuration questions of accept the defaults.
+
+Setup the environment and git pre-commit hooks:
+
+```
+git init
+git add .
+git commit -m "Initial commit of the package boilerplate"
+make conda-env-update
+pre-commit install
+```
+
+To test the setup install the package and run pre-commit and pytest:
+
+```
+pip install -e .
+make
+```
+
+
 ## License
 
 ```
-Copyright 2022 European Centre for Medium-Range Weather Forecasts (ECMWF).
+Copyright 2022, European Centre for Medium-Range Weather Forecasts (ECMWF).
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
