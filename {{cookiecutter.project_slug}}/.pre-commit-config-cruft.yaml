@@ -3,4 +3,4 @@ repos:
   rev: 2.10.2
   hooks:
   - id: cruft
-    entry: cruft update
+    entry: cruft update -y
