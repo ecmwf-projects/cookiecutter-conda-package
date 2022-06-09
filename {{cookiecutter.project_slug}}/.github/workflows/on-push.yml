@@ -19,8 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.0
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
 
   unit-tests:
     name: unit-tests (3.10)

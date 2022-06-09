@@ -1,6 +1,6 @@
 version: 2
 updates:
 - package-ecosystem: github-actions
-  directory: /{{cookiecutter.project_slug}}/.github/workflows
+  directory: /
   schedule:
     interval: weekly
