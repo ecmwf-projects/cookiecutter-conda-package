@@ -17,4 +17,4 @@ jobs:
       if: ${{ failure() }}
       uses: peter-evans/create-pull-request@v4
       with:
-        title: cruft update
+        title: weekly update
