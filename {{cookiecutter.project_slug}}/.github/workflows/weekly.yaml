@@ -1,4 +1,4 @@
-name: Cruft update
+name: weekly
 on:
   schedule:
   - cron: 0 0 * * 1
