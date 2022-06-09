@@ -1,16 +1,18 @@
-name: Pre-commit auto-update
+name: Cruft update
 on:
   schedule:
-  - cron: 0 0 * * 0
+  - cron: 0 0 * * 1
 jobs:
   auto-update:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
     - uses: pre-commit/action@v3.0.0
       with:
-        extra_args: -c .pre-commit-config-cruft.yaml
+        extra_args: -c .pre-commit-config-cruft.yaml --all-files
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:
