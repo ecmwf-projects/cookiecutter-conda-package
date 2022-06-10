@@ -59,7 +59,7 @@ make conda-env-update
 pip install -e .
 ```
 
-Finally to run pre-commit and pytest on the newly created package run:
+Finally to run pre-commit, pytest, and mypy on the newly created package run:
 
 ```
 make
