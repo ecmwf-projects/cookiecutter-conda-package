@@ -32,30 +32,43 @@ Planned:
 
 ## Usage
 
-For best experience create and keep the project up-to-date with cruft:
+For best experience create a new conda environment (e.g. DEVELOP) with Python 3.10,
+crift and make, then create the package:
 
 ```
-conda install -c conda-forge cruft
+conda create -n DEVELOP -c conda-forge python=3.10 cruft make
+conda activate DEVELOP
 cruft create https://github.com/bopen/cookiecutter-conda-package
 ```
 
-then answer the configuration questions or accept the defaults when in doubt.
+answer the configuration questions or accept the defaults when in doubt.
 
-Setup the environment and git pre-commit hooks:
+Create the git repo and add the pre-commit git hooks:
 
 ```
 git init
 git add .
 git commit -m "Initial commit of the package boilerplate"
-make conda-env-update
 pre-commit install
 ```
 
-To test the setup install the package and run pre-commit and pytest:
+To setup the package and its dependecies run:
 
 ```
+make conda-env-update
 pip install -e .
+```
+
+Finally to run pre-commit and pytest on the newly created package run:
+
+```
 make
+```
+
+To update the boilerplate to the latest template execute:
+
+````
+make template-update
 ```
 
 ## License
@@ -75,3 +88,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+````
