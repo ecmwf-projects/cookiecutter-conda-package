@@ -2,6 +2,16 @@
 
 {{ cookiecutter.project_short_description }}
 
+## Workflow for developers/contributors
+
+Before pushing on GitHub, run the following commands (preferably in an isolated conda environament):
+
+1. Update conda environment: `make conda-env-update`
+1. Install this package: `pip install -e .`
+1. Run quality assurance checks: `make qa`
+1. Run tests: `make test`
+1. Run static type checker: `make type-check`
+
 ## License
 
 ```
