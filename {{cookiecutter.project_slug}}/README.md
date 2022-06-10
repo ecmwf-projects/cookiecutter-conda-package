@@ -2,6 +2,17 @@
 
 {{ cookiecutter.project_short_description }}
 
+## Workflow for developers/contributors
+
+Before pushing to GitHub, run the following commands (preferably in an isolated conda environment):
+
+1. Update conda environment: `make conda-env-update`
+1. Install this package: `pip install -e .`
+1. Sync with the latest [template](https://github.com/bopen/cookiecutter-conda-package) (optional): `cruft update`
+1. Run quality assurance checks: `make qa`
+1. Run tests: `make test`
+1. Run the static type checker: `make type-check`
+
 ## License
 
 ```
