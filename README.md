@@ -22,10 +22,10 @@ Alpha stage:
 - Makefile
 - gitignore
 - make Docker image
+- auto template update via cruft
 
 Planned:
 
-- auto template update via cruft
 - keep environment files up-to-date
 - add documentation skeleton (with sphinx / myst?)
 - add testing `main` on selected dependencies
@@ -33,7 +33,7 @@ Planned:
 ## Usage
 
 For best experience create a new conda environment (e.g. DEVELOP) with Python 3.10,
-crift and make, then create the package:
+cruft and make, then create the package:
 
 ```
 conda create -n DEVELOP -c conda-forge python=3.10 cruft make
