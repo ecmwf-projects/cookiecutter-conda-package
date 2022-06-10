@@ -4,7 +4,14 @@
 
 ## Workflow for developers/contributors
 
-Before pushing to GitHub, run the following commands (preferably in an isolated conda environment):
+For best experience create a new conda environment (e.g. DEVELOP) with Python 3.10:
+
+```
+conda create -n DEVELOP -c conda-forge python=3.10
+conda activate DEVELOP
+```
+
+Before pushing to GitHub, run the following commands:
 
 1. Update conda environment: `make conda-env-update`
 1. Install this package: `pip install -e .`
