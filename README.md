@@ -38,7 +38,7 @@ cruft and make, then create the package:
 ```
 conda create -n DEVELOP -c conda-forge python=3.10 cruft make
 conda activate DEVELOP
-cruft create https://github.com/bopen/cookiecutter-conda-package
+cruft create https://github.com/ecmwf-projects/cookiecutter-conda-package
 ```
 
 answer the configuration questions or accept the defaults when in doubt.
