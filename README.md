@@ -51,7 +51,7 @@ git add .
 git commit -m "Initial commit of the package boilerplate"
 ```
 
-Attache an empty remote repository and push the skeleton package:
+Attach an empty remote repository and push the skeleton package:
 
 ```
 git remote add origin git@github.com:ORGANISATION/PROJECT_NAME.git
