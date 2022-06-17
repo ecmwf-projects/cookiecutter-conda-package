@@ -2,7 +2,6 @@ channels:
 - conda-forge
 - nodefaults
 dependencies:
-- cruft
 - make
 - mypy
 - pre-commit

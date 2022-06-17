@@ -49,13 +49,20 @@ Create the git repo and add the pre-commit git hooks:
 git init
 git add .
 git commit -m "Initial commit of the package boilerplate"
-pre-commit install
+```
+
+Attach an empty remote repository and push the skeleton package:
+
+```
+git remote add origin git@github.com:ORGANISATION/PROJECT_NAME.git
+git push --set-upstream origin main
 ```
 
 To setup the package and its dependecies run:
 
 ```
 make conda-env-update
+pre-commit install
 pip install -e .
 ```
 
