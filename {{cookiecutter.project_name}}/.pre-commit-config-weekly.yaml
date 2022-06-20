@@ -4,3 +4,4 @@ repos:
   hooks:
   - id: cruft
     entry: cruft update -y
+    additional_dependencies: [toml]
