@@ -1,9 +1,12 @@
 FROM continuumio/miniconda3
 
-COPY . /srv
+WORKDIR /src/{{ cookiecutter.project_name }}
 
-WORKDIR /srv
+COPY environment.yml /src/{{ cookiecutter.project_name }}/
 
-RUN conda install -c conda-forge make gcc python=3.10 \
-    && make conda-env-update CONDAFLAGS="-n base" \
-    && pip install -e .
+RUN conda install -c conda-forge gcc python=3.10 \
+    && conda enc update -n base -f environment.yml
+
+COPY . /src/{{ cookiecutter.project_name }}
+
+RUN pip install --no-deps -e .
