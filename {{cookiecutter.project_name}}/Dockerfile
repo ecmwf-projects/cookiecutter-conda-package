@@ -5,7 +5,7 @@ WORKDIR /src/{{ cookiecutter.project_name }}
 COPY environment.yml /src/{{ cookiecutter.project_name }}/
 
 RUN conda install -c conda-forge gcc python=3.10 \
-    && conda enc update -n base -f environment.yml
+    && conda env update -n base -f environment.yml
 
 COPY . /src/{{ cookiecutter.project_name }}
 
