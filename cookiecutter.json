@@ -2,6 +2,6 @@
     "project_name": "my-package",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_short_description": "Boilerplate to create a Python package based on conda-forge",
-    "copyright_holder": "European Centre for Medium-Range Weather Forecasts (ECMWF)",
+    "copyright_holder": "European Union",
     "copyright_year": "2022"
 }
