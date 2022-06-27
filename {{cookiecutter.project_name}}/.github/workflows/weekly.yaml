@@ -15,6 +15,7 @@ jobs:
       with:
         extra_args: -c .pre-commit-config-weekly.yaml --all-files
     - uses: andstor/file-existence-action@v1
+      if: failure()
       id: check_files
       with:
         files: '*.rej'
