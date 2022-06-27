@@ -81,7 +81,7 @@ make template-update
 ## License
 
 ```
-Copyright 2022, European Centre for Medium-Range Weather Forecasts (ECMWF).
+Copyright 2022, European Union.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
