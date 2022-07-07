@@ -3,7 +3,7 @@ CONDA := conda
 CONDAFLAGS :=
 COV_REPORT := html
 
-default: qa test type-check
+default: qa test type-check build-docs
 
 qa:
 	pre-commit run --all-files
@@ -25,3 +25,9 @@ docker-run:
 
 template-update:
 	pre-commit run --all-files cruft -c .pre-commit-config-weekly.yaml
+
+build-docs:
+	cd docs
+	rm -fr _api
+	make clean
+	make html
