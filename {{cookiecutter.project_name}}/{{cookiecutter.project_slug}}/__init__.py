@@ -1,3 +1,5 @@
+"""{{ cookiecutter.project_short_description }}."""
+
 # Copyright {{ cookiecutter.copyright_year }}, {{ cookiecutter.copyright_holder }}.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
