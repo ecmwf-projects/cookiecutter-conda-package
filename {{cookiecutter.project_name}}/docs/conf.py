@@ -24,7 +24,10 @@ author = "{{ cookiecutter.copyright_holder }}"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser"]
+extensions = ["myst_parser", "sphinxcontrib.apidoc"]
+apidoc_module_dir = "../{{ cookiecutter.project_slug }}"
+apidoc_output_dir = "_build/api"
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
