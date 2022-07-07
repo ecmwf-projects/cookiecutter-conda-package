@@ -6,6 +6,8 @@
 Welcome to {{ cookiecutter.project_slug }}'s documentation!
 ===========================================================
 
+{{ cookiecutter.project_short_description }}
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
