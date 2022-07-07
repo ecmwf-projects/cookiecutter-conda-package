@@ -4,6 +4,7 @@ channels:
 dependencies:
 - make
 - mypy
+- myst-parser
 - pre-commit
 - pytest
 - pytest-cov
