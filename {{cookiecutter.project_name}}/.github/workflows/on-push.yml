@@ -136,7 +136,7 @@ jobs:
 
   distribution:
     runs-on: ubuntu-latest
-    needs: [integration-tests, type-check]
+    needs: [integration-tests, type-check, documentation]
 
     steps:
     - uses: actions/checkout@v3
