@@ -4,20 +4,22 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
+# -- Import and path setup ---------------------------------------------------
 
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../"))
+import {{ cookiecutter.project_slug }}
 
+sys.path.insert(0, os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
 project = "{{ cookiecutter.project_slug }}"
 copyright = "{{ cookiecutter.copyright_year }}, {{ cookiecutter.copyright_holder }}"
 author = "{{ cookiecutter.copyright_holder }}"
-
+version = cads_catalogue.__version__
+release = cads_catalogue.__version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -49,7 +51,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
