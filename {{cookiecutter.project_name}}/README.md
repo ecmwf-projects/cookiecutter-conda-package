@@ -19,6 +19,7 @@ Before pushing to GitHub, run the following commands:
 1. Run quality assurance checks: `make qa`
 1. Run tests: `make test`
 1. Run the static type checker: `make type-check`
+1. Build the documentation: `make build-docs`
 
 ## License
 
