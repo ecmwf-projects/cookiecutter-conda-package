@@ -9,3 +9,4 @@ dependencies:
 - pytest
 - pytest-cov
 - sphinx
+- sphinx-book-theme

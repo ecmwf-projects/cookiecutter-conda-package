@@ -24,10 +24,16 @@ author = "{{ cookiecutter.copyright_holder }}"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser", "sphinxcontrib.apidoc"]
-apidoc_module_dir = "../{{ cookiecutter.project_slug }}"
-apidoc_output_dir = "_build/api"
+extensions = ["myst_parser", "sphinxcontrib.apidoc", "sphinx.ext.napoleon"]
 
+# apidoc configuration
+apidoc_module_dir = "../{{ cookiecutter.project_slug }}"
+apidoc_output_dir = "_api"
+apidoc_separate_modules = True
+
+# napoleon configuration
+napoleon_google_docstring = False
+napoleon_numpy_docstring = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -43,7 +49,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "alabaster"
+html_theme = "sphinx_book_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
