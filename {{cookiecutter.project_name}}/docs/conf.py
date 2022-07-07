@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath("../"))
 project = "{{ cookiecutter.project_slug }}"
 copyright = "{{ cookiecutter.copyright_year }}, {{ cookiecutter.copyright_holder }}"
 author = "{{ cookiecutter.copyright_holder }}"
-version = cads_catalogue.__version__
-release = cads_catalogue.__version__
+version = {{ cookiecutter.project_slug }}.__version__
+release = {{ cookiecutter.project_slug }}.__version__
 
 # -- General configuration ---------------------------------------------------
 
