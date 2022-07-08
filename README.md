@@ -23,11 +23,11 @@ Alpha stage:
 - gitignore
 - make Docker image
 - auto template update via cruft
+- add documentation skeleton (with sphinx / myst)
 
 Planned:
 
 - keep environment files up-to-date
-- add documentation skeleton (with sphinx / myst?)
 - add testing `main` on selected dependencies
 
 ## Usage
