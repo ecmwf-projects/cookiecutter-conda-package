@@ -12,6 +12,9 @@ branch = true
 [tool.isort]
 profile = "black"
 
+[tool.pydocstyle]
+convention = "numpy"
+
 [tool.setuptools_scm]
 write_to = "{{ cookiecutter.project_slug }}/version.py"
 write_to_template = '''
