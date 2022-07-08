@@ -14,6 +14,7 @@ profile = "black"
 
 [tool.pydocstyle]
 convention = "numpy"
+add_ignore = "D1"
 
 [tool.setuptools_scm]
 write_to = "{{ cookiecutter.project_slug }}/version.py"
