@@ -39,7 +39,7 @@ jobs:
     - name: Install cruft
       run: pip3 install cruft
     - name: Run cruft create
-      run: cruft create . -y
+      run: cruft create . --output-dir ..
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v12
       with:
@@ -52,5 +52,5 @@ jobs:
           python=3.10
     - name: Test package
       run: |
-        cd my-package
+        cd ../my-package
         make && make build-docs
