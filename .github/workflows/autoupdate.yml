@@ -1,9 +1,15 @@
 name: autoupdate
+
 on:
   schedule:
   - cron: 0 0 * * 0
+
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
-  auto-update:
+  autoupdate:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -11,10 +17,8 @@ jobs:
       with:
         python-version: 3.x
     - name: Install pre-commit
-      shell: bash -l {0}
       run: pip install pre-commit
     - name: Run pre-commit autoupdate
-      shell: bash -l {0}
       run: |
         pre-commit autoupdate -c .pre-commit-config.yaml
         pre-commit autoupdate -c "{{cookiecutter.project_name}}/.pre-commit-config.yaml"
