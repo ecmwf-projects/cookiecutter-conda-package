@@ -52,6 +52,8 @@ jobs:
           python=3.10
     - name: Test package
       run: |
-        cd ../my-package
-        git init
-        make && make build-docs
+        cd ../my-package || exit
+        git init || exit
+        pip install . || exit
+        make || exit
+        make build-docs || exit
