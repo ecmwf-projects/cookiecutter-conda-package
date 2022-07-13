@@ -54,6 +54,7 @@ jobs:
       run: |
         cd ../my-package || exit
         git init || exit
-        pip install . || exit
+        git add . || exit
+        pip install -e . || exit
         make || exit
         make build-docs || exit
