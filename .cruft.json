@@ -1,0 +1,16 @@
+{
+  "template": "/home/runner/work/cookiecutter-conda-package/cookiecutter-conda-package",
+  "commit": "8cf934f6e6408e62612e3eb16574a221d3ba6f8f",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "my-package",
+      "project_slug": "my_package",
+      "project_short_description": "Boilerplate to create a Python package based on conda-forge",
+      "copyright_holder": "European Union",
+      "copyright_year": "2022",
+      "_template": "/home/runner/work/cookiecutter-conda-package/cookiecutter-conda-package"
+    }
+  },
+  "directory": null
+}
