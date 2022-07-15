@@ -14,6 +14,10 @@ concurrency:
   group: ${{ '{{ github.workflow }}' }}-${{ '{{ github.ref }}' }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -27,9 +31,6 @@ jobs:
   unit-tests:
     name: unit-tests (3.10)
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
     - uses: actions/checkout@v3
@@ -40,7 +41,6 @@ jobs:
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
-        cache-env-key: ubuntu-latest-3.10
         extra-specs: |
           python=3.10
     - name: Install package
@@ -53,9 +53,6 @@ jobs:
   type-check:
     needs: [unit-tests]
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
     - uses: actions/checkout@v3
@@ -66,7 +63,6 @@ jobs:
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
-        cache-env-key: ubuntu-latest-3.10
         extra-specs: |
           python=3.10
     - name: Install package
@@ -79,9 +75,6 @@ jobs:
   documentation:
     needs: [unit-tests]
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     steps:
     - uses: actions/checkout@v3
@@ -92,7 +85,6 @@ jobs:
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
-        cache-env-key: ubuntu-latest-3.10
         extra-specs: |
           python=3.10
     - name: Install package
@@ -105,9 +97,6 @@ jobs:
   integration-tests:
     needs: [unit-tests]
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
 
     strategy:
       matrix:
@@ -124,7 +113,6 @@ jobs:
         environment-name: DEVELOP${{ '{{ matrix.extra }}' }}
         channels: conda-forge
         cache-env: true
-        cache-env-key: ubuntu-latest-${{ '{{ matrix.python-version }}' }}${{ '{{ matrix.extra }}' }}.
         extra-specs: |
           python=${{ '{{matrix.python-version }}' }}
     - name: Install package
