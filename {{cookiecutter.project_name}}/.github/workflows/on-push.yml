@@ -101,8 +101,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - python-version: '3.10'
-            extra: -minver
+        - python-version: '3.10'
+          extra: -minver
 
     steps:
     - uses: actions/checkout@v3
