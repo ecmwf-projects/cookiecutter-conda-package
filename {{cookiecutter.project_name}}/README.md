@@ -17,9 +17,9 @@ Before pushing to GitHub, run the following commands:
 1. Install this package: `pip install -e .`
 1. Sync with the latest [template](https://github.com/ecmwf-projects/cookiecutter-conda-package) (optional): `make template-update`
 1. Run quality assurance checks: `make qa`
-1. Run tests: `make test`
+1. Run tests: `make unit-tests`
 1. Run the static type checker: `make type-check`
-1. Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make build-docs`
+1. Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make docs-build`
 
 ## License
 
