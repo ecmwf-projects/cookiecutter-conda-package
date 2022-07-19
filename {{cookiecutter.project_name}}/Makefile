@@ -29,4 +29,4 @@ template-update:
 docs-build:
 	cd docs && rm -fr _api && make clean && make html
 
-# DO NOT EDIT ABOVE THIS LINE, ADD DEPENDENCIES BELOW
+# DO NOT EDIT ABOVE THIS LINE, ADD COMMANDS BELOW
