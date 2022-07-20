@@ -5,6 +5,8 @@
 ```{toctree}
 :caption: 'Contents:'
 :maxdepth: 2
+
+API Reference <_api/{{ cookiecutter.project_slug }}/index>
 ```
 
 # Indices and tables
