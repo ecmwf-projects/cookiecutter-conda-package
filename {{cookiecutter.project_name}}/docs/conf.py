@@ -33,7 +33,7 @@ extensions = [
     "sphinx.ext.napoleon",
 ]
 
-# autdoc options
+# autodoc configuration
 autodoc_typehints = "none"
 
 # autoapi configuration
