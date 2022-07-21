@@ -48,11 +48,7 @@ jobs:
         python -m pip install --no-deps -e .
     - name: Run tests
       run: |
-<<<<<<< HEAD
-        make test COV_REPORT=xml
-=======
-        make unit-tests
->>>>>>> upstream/main
+        make unit-tests COV_REPORT=xml
 
   type-check:
     needs: [unit-tests]
@@ -124,11 +120,7 @@ jobs:
         python -m pip install --no-deps -e .
     - name: Run tests
       run: |
-<<<<<<< HEAD
-        make test COV_REPORT=xml
-=======
-        make unit-tests
->>>>>>> upstream/main
+        make unit-tests COV_REPORT=xml
 
   distribution:
     runs-on: ubuntu-latest
