@@ -56,4 +56,4 @@ jobs:
         git add . || exit
         pip install -e . || exit
         make || exit
-        make build-docs || exit
+        make docs-build || exit
