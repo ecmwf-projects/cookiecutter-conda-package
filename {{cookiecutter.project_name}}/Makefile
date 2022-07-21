@@ -12,7 +12,7 @@ test:
 	python -m pytest -vv --cov=. --cov-report=$(COV_REPORT)
 
 type-check:
-	python -m mypy --strict .
+	python -m mypy {{ cookiecutter.mypy_options }} .
 
 conda-env-update:
 	$(CONDA) env update $(CONDAFLAGS) -f environment.yml

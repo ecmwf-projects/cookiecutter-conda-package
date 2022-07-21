@@ -3,5 +3,10 @@
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_short_description": "Boilerplate to create a Python package based on conda-forge",
     "copyright_holder": "European Union",
-    "copyright_year": "2022"
+    "copyright_year": "2022",
+    "add_autoupdate_action": false,
+    "mypy_options": [
+        "",
+        "--strict"
+    ]
 }
