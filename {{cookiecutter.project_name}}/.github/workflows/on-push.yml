@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v12
+      uses: mamba-org/provision-with-micromamba@v13
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -57,7 +57,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v12
+      uses: mamba-org/provision-with-micromamba@v13
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -79,7 +79,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v12
+      uses: mamba-org/provision-with-micromamba@v13
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -107,7 +107,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v12
+      uses: mamba-org/provision-with-micromamba@v13
       with:
         environment-file: environment${{ '{{ matrix.extra }}' }}.yml
         environment-name: DEVELOP${{ '{{ matrix.extra }}' }}
