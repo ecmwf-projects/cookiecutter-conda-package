@@ -54,6 +54,7 @@ git commit -m "Initial commit of the package boilerplate"
 Attach an empty remote repository and push the skeleton package:
 
 ```
+git branch -M main
 git remote add origin git@github.com:ORGANISATION/PROJECT_NAME.git
 git push --set-upstream origin main
 ```
