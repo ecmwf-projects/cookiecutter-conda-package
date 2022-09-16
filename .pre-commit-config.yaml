@@ -7,6 +7,7 @@ repos:
   - id: check-json
   - id: check-yaml
   - id: check-toml
+    exclude: pyproject.toml
   - id: check-added-large-files
   - id: mixed-line-ending
 - repo: https://github.com/executablebooks/mdformat
@@ -21,3 +22,4 @@ repos:
     args: [--autofix]
   - id: pretty-format-toml
     args: [--autofix]
+    exclude: pyproject.toml

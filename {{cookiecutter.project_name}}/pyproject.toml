@@ -6,18 +6,46 @@ requires = [
     "setuptools_scm_git_archive",
 ]
 
+[project]
+name = "{{ cookiecutter.project_name }}"
+description = "{{ cookiecutter.project_short_description }}"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering"
+]
+dynamic = ["version"]
+
 [tool.coverage.run]
 branch = true
 
 [tool.isort]
 profile = "black"
 
+[tool.mypy]
+strict = {{ cookiecutter.mypy_strict.lower() }}
+
+[[tool.mypy.overrides]]
+module = [
+]
+ignore_missing_imports = true
+
 [tool.pydocstyle]
 convention = "numpy"
 add_ignore = "D1"
 
+[tool.setuptools.packages.find]
+where = ["{{ cookiecutter.project_slug }}"]
+
 [tool.setuptools_scm]
-write_to = "{{ cookiecutter.project_slug }}/version.py"
+write_to = "{{ cookiecutter.project_slug }}/version.py"
 write_to_template = '''
 # Do not change! Do not track in version control!
 __version__ = "{version}"
