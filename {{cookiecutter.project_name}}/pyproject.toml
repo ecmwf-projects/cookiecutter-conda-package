@@ -32,17 +32,9 @@ profile = "black"
 [tool.mypy]
 strict = {{ cookiecutter.mypy_strict.lower() }}
 
-[[tool.mypy.overrides]]
-module = [
-]
-ignore_missing_imports = true
-
 [tool.pydocstyle]
 convention = "numpy"
 add_ignore = "D1"
-
-[tool.setuptools.packages.find]
-where = ["{{ cookiecutter.project_slug }}"]
 
 [tool.setuptools_scm]
 write_to = "{{ cookiecutter.project_slug }}/version.py"
