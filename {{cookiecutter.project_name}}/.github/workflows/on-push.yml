@@ -18,6 +18,9 @@ defaults:
   run:
     shell: bash -l {0}
 
+env:
+  PAT_GITHUB: ${{ '{{ secrets.PAT_GITHUB }}' }}
+
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
