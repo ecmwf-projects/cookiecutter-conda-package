@@ -21,3 +21,4 @@ repos:
     args: [--autofix]
   - id: pretty-format-toml
     args: [--autofix]
+    additional_dependencies: [toml-sort<0.22.0]
