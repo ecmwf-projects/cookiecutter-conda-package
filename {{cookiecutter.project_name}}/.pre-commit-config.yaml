@@ -44,5 +44,5 @@ repos:
   rev: 6.2.2
   hooks:
   - id: pydocstyle
-    additional_dependencies: [toml]
+    additional_dependencies: [tomli]
     exclude: tests|docs
