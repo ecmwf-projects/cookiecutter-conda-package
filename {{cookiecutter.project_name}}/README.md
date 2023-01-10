@@ -28,6 +28,11 @@ Before pushing to GitHub, run the following commands:
 1. Run the static type checker: `make type-check`
 1. Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make docs-build`
 
+## Integration tests on GitHub
+
+Add a file named `environment-integration.yml` to run unit tests with a different conda environment.
+For example, this is useful to test minimum requirements or optional dependencies.
+
 ## License
 
 ```

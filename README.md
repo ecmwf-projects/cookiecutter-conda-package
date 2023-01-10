@@ -59,7 +59,7 @@ git remote add origin git@github.com:ORGANISATION/PROJECT_NAME.git
 git push --set-upstream origin main
 ```
 
-To setup the package and its dependecies run:
+To setup the package and its dependencies run:
 
 ```
 make conda-env-update
