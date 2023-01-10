@@ -32,12 +32,12 @@ jobs:
     name: unit-tests (3.10)
     runs-on: ubuntu-latest
     outputs:
-      run_integration: steps.check_files.outputs.run_integration
+      run_integration: steps.check_files.outputs.files_exists
 
     steps:
     - uses: actions/checkout@v3
     - name: Check integration environment existence
-      id: run_integration
+      id: check_files
       uses: andstor/file-existence-action@v2
       with:
         files: environment-integration.yml
@@ -104,7 +104,7 @@ jobs:
   integration-tests:
     needs: [unit-tests]
     runs-on: ubuntu-latest
-    if: needs.units-tests.outputs.run_integration == 'true'
+    if: needs.unit-tests.outputs.run_integration == 'true'
 
     strategy:
       matrix:
