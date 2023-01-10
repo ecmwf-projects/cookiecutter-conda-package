@@ -31,9 +31,16 @@ jobs:
   unit-tests:
     name: unit-tests (3.10)
     runs-on: ubuntu-latest
+    outputs:
+      run_integration: steps.check_files.outputs.run_integration
 
     steps:
     - uses: actions/checkout@v3
+    - name: Check integration environment existence
+      id: run_integration
+      uses: andstor/file-existence-action@v2
+      with:
+        files: environment-integration.yml
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v14
       with:
@@ -97,6 +104,7 @@ jobs:
   integration-tests:
     needs: [unit-tests]
     runs-on: ubuntu-latest
+    if: needs.units-tests.outputs.run_integration == 'true'
 
     strategy:
       matrix:
@@ -106,13 +114,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Check integration environment existence
-      id: check_files
-      uses: andstor/file-existence-action@v2
-      with:
-        files: environment-integration.yml
     - name: Install Conda environment with Micromamba
-      if: steps.check_files.outputs.files_exists == 'true'
       uses: mamba-org/provision-with-micromamba@v14
       with:
         environment-file: environment${{ '{{ matrix.extra }}' }}.yml
@@ -122,11 +124,9 @@ jobs:
         extra-specs: |
           python=${{ '{{ matrix.python-version }}' }}
     - name: Install package
-      if: steps.check_files.outputs.files_exists == 'true'
       run: |
         python -m pip install --no-deps -e .
     - name: Run tests
-      if: steps.check_files.outputs.files_exists == 'true'
       run: |
         make unit-tests COV_REPORT=xml
 
