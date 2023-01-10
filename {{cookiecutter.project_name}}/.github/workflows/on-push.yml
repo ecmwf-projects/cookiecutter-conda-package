@@ -32,7 +32,7 @@ jobs:
     name: unit-tests (3.10)
     runs-on: ubuntu-latest
     outputs:
-      run_integration: steps.check_files.outputs.files_exists
+      run_integration_tests: ${{ '{{ steps.check_files.outputs.files_exists }}' }}
 
     steps:
     - uses: actions/checkout@v3
@@ -104,7 +104,7 @@ jobs:
   integration-tests:
     needs: [unit-tests]
     runs-on: ubuntu-latest
-    if: needs.unit-tests.outputs.run_integration == 'true'
+    if: needs.unit-tests.outputs.run_integration_tests == 'true'
 
     strategy:
       matrix:
