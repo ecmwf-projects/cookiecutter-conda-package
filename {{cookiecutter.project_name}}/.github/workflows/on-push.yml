@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v13
+      uses: mamba-org/provision-with-micromamba@v14
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -57,7 +57,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v13
+      uses: mamba-org/provision-with-micromamba@v14
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -79,7 +79,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v13
+      uses: mamba-org/provision-with-micromamba@v14
       with:
         environment-file: environment.yml
         environment-name: DEVELOP
@@ -107,7 +107,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v13
+      uses: mamba-org/provision-with-micromamba@v14
       with:
         environment-file: environment${{ '{{ matrix.extra }}' }}.yml
         environment-name: DEVELOP${{ '{{ matrix.extra }}' }}
@@ -128,10 +128,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install packages
+      run: |
+        $CONDA/bin/python -m pip install build twine
     - name: Build distributions
       run: |
-        $CONDA/bin/python -m pip install build
         $CONDA/bin/python -m build
+    - name: Check wheels
+      run: |
+        cd dist || exit
+        $CONDA/bin/python -m pip install {{ cookiecutter.project_slug }}*.whl || exit
+        $CONDA/bin/python -m twine check * || exit
+        $CONDA/bin/python -c "import {{ cookiecutter.project_slug }}"
     - name: Publish a Python distribution to PyPI
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
       uses: pypa/gh-action-pypi-publish@release/v1

@@ -2,6 +2,13 @@
 
 {{ cookiecutter.project_short_description }}
 
+## Quick Start
+
+```python
+>>> import {{ cookiecutter.project_slug }}
+
+```
+
 ## Workflow for developers/contributors
 
 For best experience create a new conda environment (e.g. DEVELOP) with Python 3.10:
