@@ -103,7 +103,7 @@ jobs:
         make type-check
 
   docs-build:
-    needs: [combined-environments, unit-tests]
+    needs: [combine-environments, unit-tests]
     runs-on: ubuntu-latest
 
     steps:
@@ -130,7 +130,7 @@ jobs:
         make docs-build
 
   integration-tests:
-    needs: [combined-environments, unit-tests]
+    needs: [combine-environments, unit-tests]
     runs-on: ubuntu-latest
 
     strategy:
