@@ -28,16 +28,41 @@ jobs:
         python-version: 3.x
     - uses: pre-commit/action@v3.0.0
 
-  unit-tests:
-    name: unit-tests (3.10)
+  combine-environments:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install conda-merge
+      run: |
+        $CONDA/bin/python -m pip install conda-merge
+    - name: Combine environments
+      run: |
+        for SUFFIX in ci integration; do
+        $CONDA/bin/conda-merge ci/environment-$SUFFIX.yml environment.yml > ci/combined-environment-$SUFFIX.yml || exit
+        done
+    - name: Archive combined environments
+      uses: actions/upload-artifact@v3
+      with:
+        name: combined-environments
+        path: ci/combined-environment-*.yml
+
+  unit-tests:
+    name: unit-tests (3.10)
+    needs: combine-environments
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download combined environments
+      uses: actions/download-artifact@v3
+      with:
+        name: combined-environments
+        path: ci
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v14
       with:
-        environment-file: environment.yml
+        environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
@@ -51,15 +76,20 @@ jobs:
         make unit-tests COV_REPORT=xml
 
   type-check:
-    needs: [unit-tests]
+    needs: [combine-environments, unit-tests]
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    - name: Download combined environments
+      uses: actions/download-artifact@v3
+      with:
+        name: combined-environments
+        path: ci
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v14
       with:
-        environment-file: environment.yml
+        environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
@@ -73,15 +103,20 @@ jobs:
         make type-check
 
   docs-build:
-    needs: [unit-tests]
+    needs: [combined-environments, unit-tests]
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    - name: Download combined environments
+      uses: actions/download-artifact@v3
+      with:
+        name: combined-environments
+        path: ci
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v14
       with:
-        environment-file: environment.yml
+        environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
         channels: conda-forge
         cache-env: true
@@ -95,21 +130,26 @@ jobs:
         make docs-build
 
   integration-tests:
-    needs: [unit-tests]
+    needs: [combined-environments, unit-tests]
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         include:
         - python-version: '3.10'
-          extra: -minver
+          extra: -integration
 
     steps:
     - uses: actions/checkout@v3
+    - name: Download combined environments
+      uses: actions/download-artifact@v3
+      with:
+        name: combined-environments
+        path: ci
     - name: Install Conda environment with Micromamba
       uses: mamba-org/provision-with-micromamba@v14
       with:
-        environment-file: environment${{ '{{ matrix.extra }}' }}.yml
+        environment-file: ci/combined-environment${{ '{{ matrix.extra }}' }}.yml
         environment-name: DEVELOP${{ '{{ matrix.extra }}' }}
         channels: conda-forge
         cache-env: true
