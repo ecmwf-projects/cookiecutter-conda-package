@@ -4,5 +4,6 @@
     "project_short_description": "Boilerplate to create a Python package based on conda-forge",
     "copyright_holder": "European Union",
     "copyright_year": "2022",
-    "mypy_strict": false
+    "mypy_strict": [false, true],
+    "integration_tests": [false, true]
 }
