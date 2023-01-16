@@ -22,7 +22,7 @@ jobs:
       run: |
         pre-commit autoupdate -c .pre-commit-config.yaml
         pre-commit autoupdate -c "{{cookiecutter.project_name}}/.pre-commit-config.yaml"
-        pre-commit autoupdate -c "{{cookiecutter.project_name}}/.pre-commit-config-weekly.yaml"
+        pre-commit autoupdate -c "{{cookiecutter.project_name}}/.pre-commit-config-cruft.yaml"
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v4
       with:

@@ -1,8 +1,28 @@
 [build-system]
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 
+[project]
+name = "{{ cookiecutter.project_name }}"
+description = "{{ cookiecutter.project_short_description }}"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering"
+]
+dynamic = ["version"]
+
 [tool.coverage.run]
 branch = true
+
+[tool.mypy]
+strict = {{ cookiecutter.mypy_strict.lower() }}
 
 [tool.ruff]
 # Black line length is 88, but black does not format comments.
@@ -34,7 +54,7 @@ ignore = [
 ]
 
 [tool.setuptools_scm]
-write_to = "{{ cookiecutter.project_slug }}/version.py"
+write_to = "{{ cookiecutter.project_slug }}/version.py"
 write_to_template = '''
 # Do not change! Do not track in version control!
 __version__ = "{version}"
