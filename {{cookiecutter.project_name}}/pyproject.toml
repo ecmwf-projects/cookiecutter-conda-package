@@ -53,6 +53,9 @@ ignore = [
   "D417"
 ]
 
+[tool.setuptools]
+packages = ["{{ cookiecutter.project_slug }}"]
+
 [tool.setuptools_scm]
 write_to = "{{ cookiecutter.project_slug }}/version.py"
 write_to_template = '''
