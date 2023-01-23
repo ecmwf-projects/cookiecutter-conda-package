@@ -41,7 +41,7 @@ jobs:
     - name: Create my-package
       run: cruft create . --output-dir .. -y
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v14
+      uses: mamba-org/provision-with-micromamba@v15
       with:
         environment-file: ../my-package/ci/environment-ci.yml
         environment-name: DEVELOP
