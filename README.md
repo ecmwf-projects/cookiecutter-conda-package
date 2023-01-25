@@ -64,7 +64,7 @@ To setup the package and its dependecies run:
 ```
 make conda-env-update
 pre-commit install
-pip install -e .
+pip install -e . --no-deps
 ```
 
 Finally to run pre-commit, pytest, and mypy on the newly created package run:
