@@ -20,7 +20,7 @@ repos:
   - id: blackdoc
     additional_dependencies: [black==22.3.0]
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.0.254
+  rev: v0.0.257
   hooks:
   - id: ruff
     args: [--fix]
@@ -29,7 +29,7 @@ repos:
   hooks:
   - id: mdformat
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-  rev: v2.7.0
+  rev: v2.8.0
   hooks:
   - id: pretty-format-yaml
     args: [--autofix, --preserve-quotes]
