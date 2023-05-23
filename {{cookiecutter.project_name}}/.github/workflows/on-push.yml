@@ -60,13 +60,12 @@ jobs:
         name: combined-environments
         path: ci
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v15
+      uses: mamba-org/setup-micromamba@v1
       with:
         environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
-        channels: conda-forge
-        cache-env: true
-        extra-specs: |
+        cache-environment: true
+        create-args: >-
           python=3.10
     - name: Install package
       run: |
@@ -87,13 +86,12 @@ jobs:
         name: combined-environments
         path: ci
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v15
+      uses: mamba-org/setup-micromamba@v1
       with:
         environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
-        channels: conda-forge
-        cache-env: true
-        extra-specs: |
+        cache-environment: true
+        create-args: >-
           python=3.10
     - name: Install package
       run: |
@@ -114,13 +112,12 @@ jobs:
         name: combined-environments
         path: ci
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v15
+      uses: mamba-org/setup-micromamba@v1
       with:
         environment-file: ci/combined-environment-ci.yml
         environment-name: DEVELOP
-        channels: conda-forge
-        cache-env: true
-        extra-specs: |
+        cache-environment: true
+        create-args: >-
           python=3.10
     - name: Install package
       run: |
@@ -149,13 +146,12 @@ jobs:
         name: combined-environments
         path: ci
     - name: Install Conda environment with Micromamba
-      uses: mamba-org/provision-with-micromamba@v15
+      uses: mamba-org/setup-micromamba@v1
       with:
         environment-file: ci/combined-environment${{ '{{ matrix.extra }}' }}.yml
         environment-name: DEVELOP${{ '{{ matrix.extra }}' }}
-        channels: conda-forge
-        cache-env: true
-        extra-specs: |
+        cache-environment: true
+        create-args: >-
           python=${{ '{{ matrix.python-version }}' }}
     - name: Install package
       run: |
