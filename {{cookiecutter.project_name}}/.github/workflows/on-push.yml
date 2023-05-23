@@ -48,9 +48,12 @@ jobs:
         path: ci/combined-environment-*.yml
 
   unit-tests:
-    name: unit-tests (3.10)
+    name: unit-tests
     needs: combine-environments
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11']
 
     steps:
     - uses: actions/checkout@v3
@@ -66,7 +69,7 @@ jobs:
         environment-name: DEVELOP
         cache-environment: true
         create-args: >-
-          python=3.10
+          python=${{ '{{ matrix.python-version }}' }}
     - name: Install package
       run: |
         python -m pip install --no-deps -e .
