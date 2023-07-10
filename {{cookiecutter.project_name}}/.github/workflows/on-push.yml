@@ -132,7 +132,7 @@ jobs:
   integration-tests:
     needs: [combine-environments, unit-tests]
     if: |
-      success() && {{ cookiecutter | string | lower }}
+      success() && {{ cookiecutter.integration_tests | string | lower }}
     runs-on: ubuntu-latest
 
     strategy:
