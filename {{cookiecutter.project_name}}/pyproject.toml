@@ -23,7 +23,7 @@ readme = "README.md"
 branch = true
 
 [tool.mypy]
-strict = {{ cookiecutter.mypy_strict.lower() }}
+strict = {{ cookiecutter | string | lower }}
 
 [tool.ruff]
 ignore = [
