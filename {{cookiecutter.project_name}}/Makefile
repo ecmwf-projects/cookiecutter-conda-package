@@ -15,7 +15,7 @@ type-check:
 	python -m mypy .
 
 conda-env-update:
-    $(CONDA) install -y -c conda-forge conda-merge
+	$(CONDA) install -y -c conda-forge conda-merge
 	$(CONDA) run conda-merge environment.yml ci/environment-ci.yml > ci/combined-environment-ci.yml
 	$(CONDA) env update $(CONDAFLAGS) -f ci/combined-environment-ci.yml
 
