@@ -29,16 +29,6 @@ strict = {{ cookiecutter.mypy_strict | string | lower }}
 ignore = [
   # pydocstyle: Missing Docstrings
   "D1",
-  # pydocstyle: numpy convention
-  "D107",
-  "D203",
-  "D212",
-  "D213",
-  "D402",
-  "D413",
-  "D415",
-  "D416",
-  "D417"
 ]
 # Black line length is 88, but black does not format comments.
 line-length = 110
@@ -53,6 +43,9 @@ select = [
   # pydocstyle
   "D"
 ]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
 
 [tool.setuptools]
 packages = ["{{ cookiecutter.project_slug }}"]
