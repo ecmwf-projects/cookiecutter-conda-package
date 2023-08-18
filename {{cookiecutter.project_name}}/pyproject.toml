@@ -28,7 +28,7 @@ strict = {{ cookiecutter.mypy_strict | string | lower }}
 [tool.ruff]
 ignore = [
   # pydocstyle: Missing Docstrings
-  "D1",
+  "D1"
 ]
 # Black line length is 88, but black does not format comments.
 line-length = 110
