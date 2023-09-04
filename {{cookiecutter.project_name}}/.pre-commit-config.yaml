@@ -20,12 +20,12 @@ repos:
   - id: blackdoc
     additional_dependencies: [black==22.3.0]
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.0.285
+  rev: v0.0.287
   hooks:
   - id: ruff
     args: [--fix, --show-fixes]
 - repo: https://github.com/executablebooks/mdformat
-  rev: 0.7.16
+  rev: 0.7.17
   hooks:
   - id: mdformat
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
@@ -36,6 +36,6 @@ repos:
   - id: pretty-format-toml
     args: [--autofix]
 - repo: https://github.com/gitleaks/gitleaks
-  rev: v8.17.0
+  rev: v8.18.0
   hooks:
   - id: gitleaks
