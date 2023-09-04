@@ -22,7 +22,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-python@v4
       with:
         python-version: 3.x
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install conda-merge
       run: |
         $CONDA/bin/python -m pip install conda-merge
@@ -56,7 +56,7 @@ jobs:
         python-version: ['3.10', '3.11']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Download combined environments
       uses: actions/download-artifact@v3
       with:
@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Download combined environments
       uses: actions/download-artifact@v3
       with:
@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Download combined environments
       uses: actions/download-artifact@v3
       with:
@@ -142,7 +142,7 @@ jobs:
           extra: -integration
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Download combined environments
       uses: actions/download-artifact@v3
       with:
@@ -174,7 +174,7 @@ jobs:
       (needs.integration-tests.result == 'success' || needs.integration-tests.result == 'skipped')
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install packages
       run: |
         $CONDA/bin/python -m pip install build twine
