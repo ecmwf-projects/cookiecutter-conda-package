@@ -12,6 +12,5 @@ dependencies:
 - pytest
 - pytest-cov
 - sphinx
-- pip:
-  - sphinx-autoapi
+- sphinx-autoapi
 # DO NOT EDIT ABOVE THIS LINE, ADD DEPENDENCIES BELOW
