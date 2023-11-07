@@ -15,9 +15,11 @@ Alpha stage:
 - version with setuptools-scm-git
 - copyright + Apache v2.0 license
 - GitHub Actions
-  - unit-tests
+  - unit-tests (py3.10, py3.11)
   - pre-commit
   - integration-tests
+  - build documentation
+  - static type check
   - build package & publish on PyPI
 - Makefile
 - gitignore
@@ -28,7 +30,6 @@ Alpha stage:
 Planned:
 
 - keep environment files up-to-date
-- add testing `main` on selected dependencies
 
 ## Usage
 
@@ -63,6 +64,7 @@ To setup the package and its dependecies run:
 
 ```
 make conda-env-update
+conda activate DEVELOP
 pre-commit install
 pip install -e . --no-deps
 ```
