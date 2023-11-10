@@ -30,8 +30,9 @@ ignore = [
   # pydocstyle: Missing Docstrings
   "D1"
 ]
-# Black line length is 88, but black does not format comments.
-line-length = 110
+# Same as Black.
+indent-width = 4
+line-length = 88
 select = [
   # pyflakes
   "F",
@@ -43,6 +44,9 @@ select = [
   # pydocstyle
   "D"
 ]
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 110
 
 [tool.ruff.pydocstyle]
 convention = "numpy"

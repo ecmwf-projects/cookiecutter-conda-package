@@ -11,7 +11,7 @@ Alpha stage:
 
 - pre-commit hooks
   - various linters
-  - black + isort
+  - ruff
 - version with setuptools-scm-git
 - copyright + Apache v2.0 license
 - GitHub Actions
