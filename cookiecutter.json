@@ -1,6 +1,6 @@
 {
     "project_name": "my-package",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_author": "Erwan Pannier",
     "project_short_description": "Insert package description",
     "copyright_year": "{% now 'utc', '%Y' %}",

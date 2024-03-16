@@ -15,11 +15,11 @@ sys.path.insert(0, os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
-project = "{{ cookiecutter.project_slug }}"
+project = "{{ cookiecutter.repo_name }}"
 copyright = "2024, Copyright (C) Spark Cleantech SAS (SIREN 909736068)"
 author = "{{ cookiecutter.project_author }}"
-version = {{ cookiecutter.project_slug }}.__version__
-release = {{ cookiecutter.project_slug }}.__version__
+version = {{ cookiecutter.repo_name }}.__version__
+release = {{ cookiecutter.repo_name }}.__version__
 
 # -- General configuration ---------------------------------------------------
 

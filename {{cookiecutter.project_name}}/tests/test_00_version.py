@@ -1,5 +1,5 @@
-import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.repo_name }}
 
 
 def test_version() -> None:
-    assert {{ cookiecutter.project_slug }}.__version__ != "999"
+    assert {{ cookiecutter.repo_name }}.__version__ != "999"

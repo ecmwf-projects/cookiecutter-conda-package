@@ -1,4 +1,4 @@
-PROJECT := {{ cookiecutter.project_slug }}
+PROJECT := {{ cookiecutter.repo_name }}
 CONDA := conda
 CONDAFLAGS :=
 COV_REPORT := html
