@@ -9,17 +9,17 @@
 import os
 import sys
 
-import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.repo_name }}
 
 sys.path.insert(0, os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
-project = "{{ cookiecutter.project_slug }}"
-copyright = "{{ cookiecutter.copyright_year }}, {{ cookiecutter.copyright_holder }}"
-author = "{{ cookiecutter.copyright_holder }}"
-version = {{ cookiecutter.project_slug }}.__version__
-release = {{ cookiecutter.project_slug }}.__version__
+project = "{{ cookiecutter.repo_name }}"
+copyright = " {{ cookiecutter.copyright_year }}, Copyright (C) Spark Cleantech SAS (SIREN 909736068)"
+author = "{{ cookiecutter.project_author }}"
+version = {{ cookiecutter.repo_name }}.__version__
+release = {{ cookiecutter.repo_name }}.__version__
 
 # -- General configuration ---------------------------------------------------
 
@@ -37,7 +37,7 @@ extensions = [
 autodoc_typehints = "none"
 
 # autoapi configuration
-autoapi_dirs = ["../{{ cookiecutter.project_slug }}"]
+autoapi_dirs = ["../{{ cookiecutter.repo_name }}"]
 autoapi_ignore = ["*/version.py"]
 autoapi_options = [
     "members",
