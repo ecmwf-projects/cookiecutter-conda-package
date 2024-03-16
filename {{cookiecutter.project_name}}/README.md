@@ -11,11 +11,11 @@
 
 ## Workflow for developers/contributors
 
-For best experience create a new conda environment (e.g. DEVELOP) with Python 3.11:
+For best experience create a new conda environment (e.g. {{ cookiecutter.project_slug }}_env) with Python 3.11:
 
 ```
-conda create -n DEVELOP -c conda-forge python=3.11
-conda activate DEVELOP
+conda create -n {{ cookiecutter.project_slug }}_env -c conda-forge python=3.11
+conda activate {{ cookiecutter.project_slug }}_env
 ```
 
 Before pushing to GitHub, run the following commands:

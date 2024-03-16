@@ -1,9 +1,6 @@
-# cookiecutter-conda-package
+# Spark Package Template
 
-Template for Python packages based on Conda.
-
-This package is developed to ease development of ECMWF packages, but it is intended to
-be more generic.
+This package is developed to ease development of Spark-Cleantech packages
 
 ## Features
 
@@ -13,7 +10,7 @@ Alpha stage:
   - various linters
   - ruff
 - version with setuptools-scm-git
-- copyright + Apache v2.0 license
+- copyright license
 - GitHub Actions
   - unit-tests (py3.11)
   - pre-commit
@@ -33,13 +30,13 @@ Planned:
 
 ## Usage
 
-For best experience create a new conda environment (e.g. DEVELOP) with Python 3.11,
+For best experience create a new conda environment (e.g. `MY_PACKAGE`) with Python 3.11,
 cruft and make, then create the package:
 
 ```
-conda create -n DEVELOP -c conda-forge python=3.11 cruft make
-conda activate DEVELOP
-cruft create https://github.com/ecmwf-projects/cookiecutter-conda-package
+conda create -n MY_PACKAGE -c conda-forge python=3.11 cruft make
+conda activate MY_PACKAGE
+cruft create https://github.com/spark-cleantech.eu/package-template
 ```
 
 answer the configuration questions or accept the defaults when in doubt.
@@ -56,7 +53,7 @@ Attach an empty remote repository and push the skeleton package:
 
 ```
 git branch -M main
-git remote add origin git@github.com:ORGANISATION/PROJECT_NAME.git
+git remote add origin git@github.com:spark-cleantech/MY_PACKAGE.git
 git push --set-upstream origin main
 ```
 
@@ -64,7 +61,7 @@ To setup the package and its dependecies run:
 
 ```
 make conda-env-update
-conda activate DEVELOP
+conda activate MY_PACKAGE
 pre-commit install
 pip install -e . --no-deps
 ```
@@ -84,17 +81,13 @@ make template-update
 ## License
 
 ```
-Copyright 2022, European Union.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+/* Copyright (C) Spark Cleantech, SAS - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ Written by Erwan Pannier <erwan.pannier@spark-cleantech.eu>, March 2024
 ```
+
+## Credits
+
+Originally based on Cookiecutter template at https://github.com/ecmwf-projects/cookiecutter-conda-package,
+distributed under Apache Licence. Licence was changed after the fork. 

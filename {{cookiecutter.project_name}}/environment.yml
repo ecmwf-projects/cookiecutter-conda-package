@@ -1,7 +1,7 @@
 # environment.yml: Mandatory dependencies only.
 channels:
 - conda-forge
-- nodefaults
+- nodefaults  # no defaults
 # EXAMPLE:
 # dependencies:
 # - package1
