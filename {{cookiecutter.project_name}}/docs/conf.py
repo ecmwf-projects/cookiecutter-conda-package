@@ -9,7 +9,7 @@
 import os
 import sys
 
-import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.repo_name }}
 
 sys.path.insert(0, os.path.abspath("../"))
 
@@ -37,7 +37,7 @@ extensions = [
 autodoc_typehints = "none"
 
 # autoapi configuration
-autoapi_dirs = ["../{{ cookiecutter.project_slug }}"]
+autoapi_dirs = ["../{{ cookiecutter.repo_name }}"]
 autoapi_ignore = ["*/version.py"]
 autoapi_options = [
     "members",
