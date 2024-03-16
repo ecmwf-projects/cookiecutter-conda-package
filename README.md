@@ -14,7 +14,6 @@ Alpha stage:
 - GitHub Actions
   - unit-tests (py3.11)
   - pre-commit
-  - integration-tests
   - build documentation
   - static type check
 - Makefile

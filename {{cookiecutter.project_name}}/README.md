@@ -4,6 +4,14 @@
 
 ## Quick Start
 
+Install in your current environment:
+
+```
+pip install git+https://github.com/spark-cleantech/{{ cookiecutter.project_name }}
+```
+
+Run:
+
 ```python
 >>> import {{ cookiecutter.project_slug }}
 
@@ -11,11 +19,18 @@
 
 ## Workflow for developers/contributors
 
-For best experience create a new conda environment (e.g. {{ cookiecutter.project_slug }}_env) with Python 3.11:
+Clone the repository : 
 
 ```
-conda create -n {{ cookiecutter.project_slug }}_env -c conda-forge python=3.11 -y
-conda activate {{ cookiecutter.project_slug }}_env
+git clone https://github.com/spark-cleantech/{{ cookiecutter.project_name }}.git
+cd {{ cookiecutter.project_name }}
+```
+
+For best experience create a new conda environment (e.g. {{ cookiecutter.project_slug }}-env) with Python 3.11:
+
+```
+conda create -n {{ cookiecutter.project_slug }}-env -c conda-forge python=3.11 -y
+conda activate {{ cookiecutter.project_slug }}-env
 ```
 
 Before pushing to GitHub, run the following commands:
