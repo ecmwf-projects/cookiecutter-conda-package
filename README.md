@@ -32,9 +32,9 @@ For best experience create a new conda environment (e.g. `MY_PACKAGE`) with Pyth
 cruft and make, then create the package:
 
 ```
-conda create -n MY_PACKAGE -c conda-forge python=3.11 cruft make
+conda create -n MY_PACKAGE -c conda-forge python=3.11 cruft make -y
 conda activate MY_PACKAGE
-cruft create https://github.com/spark-cleantech.eu/package-template
+cruft create https://github.com/spark-cleantech/package-template
 ```
 
 answer the configuration questions or accept the defaults when in doubt.
@@ -46,6 +46,10 @@ git init
 git add .
 git commit -m "Initial commit of the package boilerplate"
 ```
+
+Go to GitHub, click + "[make a new repository](https://github.com/organizations/spark-cleantech/repositories/new)", call it the same thing 
+as your cookiecutter folder (e.g. `MY_PACKAGE`). Add no licence nor README ;
+keep the repo Private.
 
 Attach an empty remote repository and push the skeleton package:
 
@@ -63,6 +67,12 @@ conda activate MY_PACKAGE
 pre-commit install
 pip install -e . --no-deps
 ```
+
+If using Windows, `make` is not available by default. Either install it 
+([for instance with Chocolatey](https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows)),
+or open the [Makefile](./Makefile) and execute the lines therein manually.
+
+
 
 Finally to run pre-commit, pytest, and mypy on the newly created package run:
 

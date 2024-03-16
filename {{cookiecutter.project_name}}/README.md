@@ -23,10 +23,15 @@ Before pushing to GitHub, run the following commands:
 1. Update conda environment: `make conda-env-update`
 1. Install this package in editable mode: `pip install -e .`
 1. (optional) Sync with the latest [template](https://github.com/spark-cleantech/package-template) : `make template-update`
-1. (optional) Run quality assurance checks: `make qa`
+1. (optional) Run quality assurance checks (code linting): `make qa`
 1. (optional) Run tests: `make unit-tests`
 1. (optional) Run the static type checker: `make type-check`
 1. (optional) Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make docs-build`
+
+If using Windows, `make` is not available by default. Either install it 
+([for instance with Chocolatey](https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows)),
+or open the [Makefile](./Makefile) and execute the lines therein manually.
+
 
 ## License
 
