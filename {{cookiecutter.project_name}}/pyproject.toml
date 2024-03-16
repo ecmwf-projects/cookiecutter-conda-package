@@ -53,10 +53,10 @@ max-line-length = 110
 convention = "numpy"
 
 [tool.setuptools]
-packages = ["{{ cookiecutter.project_slug }}"]
+packages = ["{{ cookiecutter.repo_name }}"]
 
 [tool.setuptools_scm]
-write_to = "{{ cookiecutter.project_slug }}/version.py"
+write_to = "{{ cookiecutter.repo_name }}/version.py"
 write_to_template = '''
 # Do not change! Do not track in version control!
 __version__ = "{version}"

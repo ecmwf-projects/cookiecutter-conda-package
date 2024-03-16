@@ -1,4 +1,4 @@
-# Welcome to {{ cookiecutter.project_slug }}'s documentation!
+# Welcome to {{ cookiecutter.repo_name }}'s documentation!
 
 {{ cookiecutter.project_short_description }}.
 
@@ -6,7 +6,7 @@
 :caption: 'Contents:'
 :maxdepth: 2
 
-API Reference <_api/{{ cookiecutter.project_slug }}/index>
+API Reference <_api/{{ cookiecutter.repo_name }}/index>
 ```
 
 # Indices and tables
