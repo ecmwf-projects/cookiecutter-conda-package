@@ -1,9 +1,12 @@
 {
     "project_name": "my-package",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "Boilerplate to create a Python package based on conda-forge",
+    "project_short_description": "Insert package description",
     "copyright_holder": "Spark Cleantech SAS (SIREN 909736068)",
     "copyright_year": "{% now 'utc', '%Y' %}",
     "mypy_strict": false,
-    "integration_tests": false
+    "integration_tests": false,
+    "use_docker": false,
+    "use_ci": true,
+    "version": "0.1.0"
 }

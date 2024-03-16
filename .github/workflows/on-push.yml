@@ -28,6 +28,7 @@ jobs:
         python-version: 3.x
     - uses: pre-commit/action@v3.0.1
 
+# Install package, Test, Build docs
   test-package:
     runs-on: ubuntu-latest
     needs: [pre-commit]
@@ -43,8 +44,8 @@ jobs:
     - name: Install Conda environment with Micromamba
       uses: mamba-org/setup-micromamba@v1
       with:
-        environment-file: ../my-package/ci/environment-ci.yml
-        environment-name: DEVELOP
+        environment-file: ../{{ cookiecutter.project_name }}/ci/environment-ci.yml
+        environment-name: {{ cookiecutter.project_slug }}_env)
         cache-environment: true
         create-args: >-
           python=3.11
