@@ -6,7 +6,4 @@
     "copyright_year": "{% now 'utc', '%Y' %}",
     "mypy_strict": false,
     "integration_tests": false,
-    "use_docker": false,
-    "use_ci": true,
-    "version": "0.1.0"
 }
