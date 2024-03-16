@@ -19,7 +19,7 @@ Run:
 
 ## Workflow for developers/contributors
 
-Clone the repository : 
+Clone the repository :
 
 ```
 git clone https://github.com/spark-cleantech/{{ cookiecutter.project_name }}.git
@@ -43,10 +43,9 @@ Before pushing to GitHub, run the following commands:
 1. (optional) Run the static type checker: `make type-check`
 1. (optional) Build the documentation (see [Sphinx tutorial](https://www.sphinx-doc.org/en/master/tutorial/)): `make docs-build`
 
-If using Windows, `make` is not available by default. Either install it 
+If using Windows, `make` is not available by default. Either install it
 ([for instance with Chocolatey](https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows)),
 or open the [Makefile](./Makefile) and execute the lines therein manually.
-
 
 ## License
 

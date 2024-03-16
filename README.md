@@ -46,7 +46,7 @@ git add .
 git commit -m "Initial commit of the package boilerplate"
 ```
 
-Go to GitHub, click + "[make a new repository](https://github.com/organizations/spark-cleantech/repositories/new)", call it the same thing 
+Go to GitHub, click + "[make a new repository](https://github.com/organizations/spark-cleantech/repositories/new)", call it the same thing
 as your cookiecutter folder (e.g. `MY_PACKAGE`). Add no licence nor README ;
 keep the repo Private.
 
@@ -67,11 +67,9 @@ pre-commit install
 pip install -e . --no-deps
 ```
 
-If using Windows, `make` is not available by default. Either install it 
+If using Windows, `make` is not available by default. Either install it
 ([for instance with Chocolatey](https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows)),
 or open the [Makefile](./Makefile) and execute the lines therein manually.
-
-
 
 Finally to run pre-commit, pytest, and mypy on the newly created package run:
 
@@ -97,4 +95,4 @@ Written by Erwan Pannier <erwan.pannier@spark-cleantech.eu>, March 2024
 ## Credits
 
 Originally based on Cookiecutter template at https://github.com/ecmwf-projects/cookiecutter-conda-package,
-distributed under Apache Licence. Licence was changed after the fork. 
+distributed under Apache Licence. Licence was changed after the fork.
