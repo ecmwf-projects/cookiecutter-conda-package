@@ -4,6 +4,5 @@
     "project_short_description": "Insert package description",
     "copyright_holder": "Spark Cleantech SAS (SIREN 909736068)",
     "copyright_year": "{% now 'utc', '%Y' %}",
-    "mypy_strict": false,
-    "integration_tests": false
+    "mypy_strict": false
 }

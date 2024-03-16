@@ -14,7 +14,7 @@
 For best experience create a new conda environment (e.g. {{ cookiecutter.project_slug }}_env) with Python 3.11:
 
 ```
-conda create -n {{ cookiecutter.project_slug }}_env -c conda-forge python=3.11
+conda create -n {{ cookiecutter.project_slug }}_env -c conda-forge python=3.11 -y
 conda activate {{ cookiecutter.project_slug }}_env
 ```
 
