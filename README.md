@@ -17,10 +17,8 @@ Alpha stage:
   - integration-tests
   - build documentation
   - static type check
-  - build package & publish on PyPI
 - Makefile
 - gitignore
-- make Docker image
 - auto template update via cruft
 - add documentation skeleton (with sphinx / myst)
 
@@ -81,10 +79,10 @@ make template-update
 ## License
 
 ```
-/* Copyright (C) Spark Cleantech, SAS - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- Written by Erwan Pannier <erwan.pannier@spark-cleantech.eu>, March 2024
+Copyright (C) Spark Cleantech SAS (SIREN 909736068) - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Erwan Pannier <erwan.pannier@spark-cleantech.eu>, March 2024
 ```
 
 ## Credits
