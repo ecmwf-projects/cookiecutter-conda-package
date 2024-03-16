@@ -21,9 +21,9 @@ Alpha stage:
 - auto template update via cruft
 - add documentation skeleton (with sphinx / myst)
 
-Planned:
+Here is an example of package generated :
 
-- keep environment files up-to-date
+- https://github.com/spark-cleantech/test9
 
 ## Usage
 
@@ -41,6 +41,7 @@ answer the configuration questions or accept the defaults when in doubt.
 Create the git repo and add the pre-commit git hooks:
 
 ```
+cd MY_PACKAGE
 git init
 git add .
 git commit -m "Initial commit of the package boilerplate"
