@@ -1,4 +1,11 @@
 # environment.yml: Mandatory dependencies only.
+#
+# Create a new environment from this file with :
+#   conda create -n {{ cookiecutter.repo_name }}-env python=3.11 -y
+#
+# Or update an existing environment {{ cookiecutter.repo_name }}-env from this file with :
+#   conda activate {{ cookiecutter.repo_name }}-env
+#   conda env update --file environment.yml
 channels:
 - conda-forge
 - nodefaults  # no defaults
