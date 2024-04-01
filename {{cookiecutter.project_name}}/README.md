@@ -17,7 +17,25 @@ Run in Python:
 
 ```
 
-## Workflow for developers/contributors
+## Use in a dedicated environment
+
+This is recommended for large packages. Clone the repository and create
+an isolated environment :
+
+```
+git clone https://github.com/spark-cleantech/{{ cookiecutter.project_name }}.git
+cd {{ cookiecutter.project_name }}
+conda env create -n {{ cookiecutter.repo_name }}-env -f environment.yml
+pip install -e .         # install in editable mode
+```
+
+Run in Python:
+
+```python
+>>> import spy
+```
+
+## Workflow for Developers/contributors
 
 Clone the repository :
 
