@@ -26,6 +26,7 @@ an isolated environment :
 git clone https://github.com/spark-cleantech/{{ cookiecutter.project_name }}.git
 cd {{ cookiecutter.project_name }}
 conda env create -n {{ cookiecutter.repo_name }}-env -f environment.yml
+conda activate {{ cookiecutter.repo_name }}-env
 pip install -e .         # install in editable mode
 ```
 
