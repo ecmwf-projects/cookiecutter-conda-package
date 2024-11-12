@@ -6,6 +6,7 @@
 :caption: 'Contents:'
 :maxdepth: 2
 
+README.md
 API Reference <_api/{{ cookiecutter.project_slug }}/index>
 ```
 
