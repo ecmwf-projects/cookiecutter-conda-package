@@ -11,7 +11,7 @@ repos:
   - id: check-added-large-files
   - id: mixed-line-ending
 - repo: https://github.com/executablebooks/mdformat
-  rev: 0.7.18
+  rev: 0.7.19
   hooks:
   - id: mdformat
 - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
