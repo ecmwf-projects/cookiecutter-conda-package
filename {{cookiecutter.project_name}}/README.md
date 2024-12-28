@@ -33,7 +33,7 @@ pip install -e .         # install in editable mode
 Run in Python:
 
 ```python
->>> import spy
+>>> import {{ cookiecutter.repo_name }} 
 ```
 
 ## Workflow for Developers/contributors
