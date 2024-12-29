@@ -14,7 +14,7 @@ Run in Python:
 
 ```python
 >>> import {{ cookiecutter.repo_name }}
-
+>>> print({{ cookiecutter.repo_name }}.__version__)
 ```
 
 ## Use in a dedicated environment
@@ -33,7 +33,8 @@ pip install -e .         # install in editable mode
 Run in Python:
 
 ```python
->>> import {{ cookiecutter.repo_name }} 
+>>> import {{ cookiecutter.repo_name }}
+>>> print({{ cookiecutter.repo_name }}.__version__)
 ```
 
 ## Workflow for Developers/contributors
