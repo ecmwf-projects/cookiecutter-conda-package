@@ -202,7 +202,7 @@ jobs:
     - name: Check wheels
       run: |
         cd dist || exit
-        python -m pip install {{ cookiecutter.project_slug }}*.whl || exit
+        python -m pip install {{ cookiecutter.project_name | replace("-", "_") }}*.whl || exit
         python -m twine check --strict * || exit
         python -c "import {{ cookiecutter.project_slug }}" || exit
         cd ..
