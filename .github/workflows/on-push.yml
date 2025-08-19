@@ -47,7 +47,7 @@ jobs:
         environment-name: DEVELOP
         cache-environment: true
         create-args: >-
-          python=3.11
+          python=3.12
     - name: Test my-package
       run: |
         cd ../my-package || exit

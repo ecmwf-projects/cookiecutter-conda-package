@@ -15,7 +15,7 @@ Alpha stage:
 - version with setuptools-scm-git
 - copyright + Apache v2.0 license
 - GitHub Actions
-  - unit-tests (py3.11)
+  - unit-tests (py3.12)
   - pre-commit
   - integration-tests
   - build documentation
@@ -33,11 +33,11 @@ Planned:
 
 ## Usage
 
-For best experience create a new conda environment (e.g. DEVELOP) with Python 3.11,
+For best experience create a new conda environment (e.g. DEVELOP) with Python 3.12,
 cruft and make, then create the package:
 
 ```
-conda create -n DEVELOP -c conda-forge python=3.11 cruft make
+conda create -n DEVELOP -c conda-forge python=3.12 cruft make
 conda activate DEVELOP
 cruft create https://github.com/ecmwf-projects/cookiecutter-conda-package
 ```
